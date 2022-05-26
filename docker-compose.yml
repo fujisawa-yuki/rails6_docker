@@ -20,6 +20,7 @@ services:
     depends_on:
       - db
     environment:
+      - "TZ=Asia/Tokyo"
       # 環境変数でエディタにvimを指定
       - EDITOR=vim
     # dockerでbinding.pryを実行するための記述
