@@ -39,7 +39,7 @@ git remote add origin git@github.com:ユーザ名/リポジトリ名.git
 
 [![Image from Gyazo](https://i.gyazo.com/225622a053f31b3551d8b56ba2e3dd5d.png)](https://gyazo.com/225622a053f31b3551d8b56ba2e3dd5d)
 
-6. ブランチ名をmainに変更し、リモートリポジトリにコードを push する。
+6. ブランチ名を main に変更し、リモートリポジトリにコードを push する。
 
 ```
 git branch -M main
@@ -61,8 +61,12 @@ docker-compose build
 docker-compose up
 ```
 
-=>完成！！！<br>
 [![Image from Gyazo](https://i.gyazo.com/2054526e03bfac32d1c8d4c68bafd638.png)](https://gyazo.com/2054526e03bfac32d1c8d4c68bafd638)
+
+9. http://localhost:3000/ <span>にアクセスする。</span>
+
+=>完成！！！<br>
+[![Image from Gyazo](https://i.gyazo.com/230cc9564b5da741ba4a275e42160a75.png)](https://gyazo.com/230cc9564b5da741ba4a275e42160a75)
 
 # 各種知識
 
