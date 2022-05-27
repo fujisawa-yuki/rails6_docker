@@ -100,7 +100,7 @@ docker-compose run --rm web rails db:reset
 # seed ファイルがあれば、その読み込みも行われる
 ```
 
-## RuboCop によるコード自動修正
+## RuboCop
 
 ```
 # 修正箇所指摘
@@ -122,7 +122,7 @@ binding.pryを挿入している箇所になるとデバッグモードが起動
 exitでデバッグモードを終了する。ループして終了できないときは!!!で終了する。
 ```
 
-## RSpec でテスト実行
+## RSpec
 
 ```
 # 全テスト実行
@@ -141,7 +141,7 @@ docker-compose run --rm web rspec spec/xxx/xxx_spec.rb:1
 docker-compose run --rm web rails credentials:edit
 ```
 
-## git
+## Git
 
 - GUI（無理にコマンドで実行しなくても、意外と GUI でできることは多い）  
   [VSCode での Git の基本操作まとめ](https://qiita.com/y-tsutsu/items/2ba96b16b220fb5913be)  
