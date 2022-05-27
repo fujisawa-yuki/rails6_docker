@@ -85,7 +85,7 @@ docker-compose down
 ## イメージの再構築
 
 ```
-docker-compose up
+docker-compose build
 ```
 
 gem を追加した後などに実行する。
