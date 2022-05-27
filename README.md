@@ -5,14 +5,14 @@
 環境構築のコードは以下の記事を参考にして作成しました。<br>
 [docker-compose で Rails 6×MySQL の開発環境を構築する方法](https://tmasuyama1114.com/docker-compose-rails6-mysql-development/)
 
-## 方法
+# 方法
 
 1. コードを clone するディレクトリに移動する。<br>
    注）Downloads、Documents、Desktop の使用は避ける。理由は、Docker で NFS をマウントする際に、エラーが発生することがあるからです。<br>
    https://objekt.click/2019/11/docker-the-problem-with-macos-catalina/<br>
    https://qiita.com/dmrt/items/b9aab190840c4854f219
 
-2. このブランチを指定して clone する。
+2. ブランチを指定して clone する。
 
 ```
 git clone -b [ブランチ名][リポジトリのアドレス]
@@ -29,7 +29,7 @@ git clone -b rails6_docker git@github.com:vareal/SDD_Standard.git
 4. GitHub にリポジトリを作成する。
    [![Image from Gyazo](https://i.gyazo.com/c52049b4e41dfcbfd6c03836fad6c0ae.png)](https://gyazo.com/c52049b4e41dfcbfd6c03836fad6c0ae)
 
-5. cd でプロジェクトのディレクトリに移動する。既存の origin を削除してから、再度 origin を登録し直す。<br>
+5. でプロジェクトのディレクトリに移動する。既存の origin を削除してから、再度 origin を登録し直す。<br>
    https://qiita.com/hatorijobs/items/1cae1946656ece954c63
 
 ```
@@ -39,7 +39,7 @@ git remote add origin git@github.com:ユーザ名/リポジトリ名.git
 
 [![Image from Gyazo](https://i.gyazo.com/225622a053f31b3551d8b56ba2e3dd5d.png)](https://gyazo.com/225622a053f31b3551d8b56ba2e3dd5d)
 
-6. ブランチ名を変更し、リモートリポジトリにコードを push する。
+6. ブランチ名をmainに変更し、リモートリポジトリにコードを push する。
 
 ```
 git branch -M main
@@ -64,21 +64,21 @@ docker-compose up
 =>完成！！！<br>
 [![Image from Gyazo](https://i.gyazo.com/2054526e03bfac32d1c8d4c68bafd638.png)](https://gyazo.com/2054526e03bfac32d1c8d4c68bafd638)
 
-## 各種知識
+# 各種知識
 
-### コンテナ起動
+## コンテナ起動
 
 ```
 docker-compose up
 ```
 
-### コンテナ停止
+## コンテナ停止
 
 ```
 docker-compose down
 ```
 
-### イメージの再構築
+## イメージの再構築
 
 ```
 docker-compose up
@@ -86,7 +86,7 @@ docker-compose up
 
 gem を追加した後などに実行する。
 
-### ローカル DB の再設定
+## ローカル DB の再設定
 
 ```
 docker-compose run web rails db:reset
@@ -94,7 +94,7 @@ docker-compose run web rails db:reset
 
 seed ファイルがあれば、その読み込みも行われる
 
-### RuboCop によるコード自動修正
+## RuboCop によるコード自動修正
 
 ```
 docker-compose run web bundle exec rubocop -A
@@ -102,7 +102,7 @@ docker-compose run web bundle exec rubocop -A
 
 -A がない場合は、修正箇所の指摘のみが行われる。
 
-### binding.pry でデバッグ
+## binding.pry でデバッグ
 
 ```
 docker psでRailsが動いているコンテナを確認し、そのIDをコピーする。
@@ -111,7 +111,7 @@ binding.pryを挿入している箇所になるとデバッグモードが起動
 exitでデバッグモードを終了する。ループして終了できないときは!!!で終了する。
 ```
 
-### RSpec でテスト実行
+## RSpec でテスト実行
 
 ```
 docker-compose run web bundle exec rspec
@@ -119,13 +119,13 @@ docker-compose run web bundle exec rspec
 
 rspec の後にパスを指定すると、そのパス以下のファイルのみ RSpec が実行される。
 
-### credentials の編集
+## credentials の編集
 
 ```
 docker-compose run web rails credentials:edit
 ```
 
-### 主な gem 一覧
+## 主な gem 一覧
 
 | gem           | 参照 URL                                       | 機能                 |
 | ------------- | ---------------------------------------------- | -------------------- |
@@ -138,7 +138,7 @@ docker-compose run web rails credentials:edit
 | bullet        | https://github.com/flyerhzm/bullet             | N+1 問題チェック     |
 | annotate      | https://github.com/ctran/annotate_models       | テーブル情報表示     |
 
-## その他
+# その他
 
 - rubocop.yml の中身は、各々のプロジェクトに合わせて適宜ご修正ください。
 - Rails と OS のタイムゾーンは JST、DB のタイムゾーンは UTC に設定してあります。各々のプロジェクトに合わせて適宜ご修正ください。<br>
