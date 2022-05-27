@@ -95,7 +95,7 @@ docker-compose build --no-cache
 ## ローカル DB の再設定
 
 ```
-docker-compose run --rm web rails db:reset
+docker-compose run --rm web bundle exec rails db:reset
 # seed ファイルがあれば、その読み込みも行われる
 ```
 
@@ -137,7 +137,7 @@ docker-compose run --rm web bundle exec rspec spec/xxx/xxx_spec.rb:1
 ## credentials の編集
 
 ```
-docker-compose run --rm web rails credentials:edit
+docker-compose run --rm web bundle exec rails credentials:edit
 ```
 
 ## Git
