@@ -83,8 +83,7 @@ docker-compose down
 docker-compose run --rm web bash
 
 # コンテナに入る + コンソール起動
-docker-compose run --rm web bash
-rails c
+docker-compose run --rm web bundle exec rails c
 
 # イメージの再構築（gem を追加した後などに実行する。）
 docker-compose build
@@ -110,7 +109,7 @@ docker-compose run --rm web bundle exec rubocop
 docker-compose run --rm web bundle exec rubocop -A
 
 # 特定のファイルのみ実行
-docker-compose run --rm web rubocop app/xxx/xxx.rb
+docker-compose run --rm web bundle exec rubocop app/xxx/xxx.rb
 ```
 
 ## binding.pry でデバッグ
@@ -129,10 +128,10 @@ exitでデバッグモードを終了する。ループして終了できない�
 docker-compose run --rm web bundle exec rspec
 
 # 特定のファイルのみ実行
-docker-compose run --rm web rspec spec/xxx/xxx_spec.rb
+docker-compose run --rm web bundle exec rspec spec/xxx/xxx_spec.rb
 
 # 特定のケースのみ実行 (実行するブロックの行番号を付与)
-docker-compose run --rm web rspec spec/xxx/xxx_spec.rb:1
+docker-compose run --rm web bundle exec rspec spec/xxx/xxx_spec.rb:1
 ```
 
 ## credentials の編集
