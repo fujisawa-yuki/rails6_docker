@@ -51,7 +51,7 @@ git push -u origin main
 7. ローカル DB を設定する。
 
 ```
-docker-compose run web rails db:reset
+docker-compose run --rm web rails db:reset
 ```
 
 8. イメージを構築し、コンテナを起動する。
