@@ -109,7 +109,7 @@ docker-compose run --rm web bundle exec rubocop
 # 修正箇所指摘 + 自動修正
 docker-compose run --rm web bundle exec rubocop -A
 
-# Rubocop 特定のファイルのみ実行
+# 特定のファイルのみ実行
 docker-compose run --rm web rubocop app/xxx/xxx.rb
 ```
 
@@ -128,10 +128,10 @@ exitでデバッグモードを終了する。ループして終了できない�
 # 全テスト実行
 docker-compose run --rm web bundle exec rspec
 
-# RSpec 特定のファイルのみ実行
+# 特定のファイルのみ実行
 docker-compose run --rm web rspec spec/xxx/xxx_spec.rb
 
-# RSpec 特定のケースのみ実行 (実行するブロックの行番号を付与)
+# 特定のケースのみ実行 (実行するブロックの行番号を付与)
 docker-compose run --rm web rspec spec/xxx/xxx_spec.rb:1
 ```
 
