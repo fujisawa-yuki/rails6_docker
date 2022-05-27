@@ -80,10 +80,11 @@ docker-compose up
 docker-compose down
 
 # コンテナに入る
-docker-compose run --rm settings-api bash
+docker-compose run --rm web bash
 
 # コンテナに入る + コンソール起動
-docker-compose run --rm settings-api bash rails c
+docker-compose run --rm web bash
+rails c
 
 # イメージの再構築（gem を追加した後などに実行する。）
 docker-compose build
