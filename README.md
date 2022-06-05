@@ -7,66 +7,68 @@
 
 # 方法
 
-1. コードを clone するディレクトリに移動する。  
-   注）Downloads、Documents、Desktop の使用は避ける。理由は、Docker で NFS をマウントする際に、エラーが発生することがあるからです。  
-   https://objekt.click/2019/11/docker-the-problem-with-macos-catalina/  
-   https://qiita.com/dmrt/items/b9aab190840c4854f219
+**1. コードを clone するディレクトリに移動する。**  
+ 注）Downloads、Documents、Desktop の使用は避ける。理由は、Docker で NFS をマウントする際に、エラーが発生することがあるからです。  
+ https://objekt.click/2019/11/docker-the-problem-with-macos-catalina/  
+ https://qiita.com/dmrt/items/b9aab190840c4854f219
 
-2. ブランチを指定して clone する。
+**2. ブランチを指定して clone する。**
 
 ```
 git clone -b [ブランチ名][リポジトリのアドレス]
 git clone -b rails6_docker git@github.com:vareal/SDD_Standard.git
 ```
 
-3. プロジェクトのディレクトリ名を SDD_Standard から好みの名前に変更する。  
-   例）  
-   before  
-   [![Image from Gyazo](https://i.gyazo.com/81a9dfbca8be03f880727e576c25454e.png)](https://gyazo.com/81a9dfbca8be03f880727e576c25454e)  
-   after  
-   [![Image from Gyazo](https://i.gyazo.com/7e960fd2cf97cff82bcaebaeaf2fa2ef.png)](https://gyazo.com/7e960fd2cf97cff82bcaebaeaf2fa2ef)
+**3. プロジェクトのディレクトリ名を SDD_Standard から好みの名前に変更する。**
 
-4. GitHub にリポジトリを作成する。
-   [![Image from Gyazo](https://i.gyazo.com/c52049b4e41dfcbfd6c03836fad6c0ae.png)](https://gyazo.com/c52049b4e41dfcbfd6c03836fad6c0ae)
+例）  
+before  
+<kbd><img src="https://i.gyazo.com/81a9dfbca8be03f880727e576c25454e.png" width="150px"></kbd><br>
+after  
+<kbd><img src="https://i.gyazo.com/7e960fd2cf97cff82bcaebaeaf2fa2ef.png" width="160px"></kbd><br>
 
-5. でプロジェクトのディレクトリに移動する。既存の origin を削除してから、再度 origin を登録し直す。  
-   https://qiita.com/hatorijobs/items/1cae1946656ece954c63
+**4. GitHub にリポジトリを作成する。**
+
+<kbd><img src="https://i.gyazo.com/c52049b4e41dfcbfd6c03836fad6c0ae.png" width="500px"></kbd><br>
+
+**5. でプロジェクトのディレクトリに移動する。既存の origin を削除してから、再度 origin を登録し直す。**  
+ https://qiita.com/hatorijobs/items/1cae1946656ece954c63
 
 ```
 git remote rm origin
 git remote add origin git@github.com:ユーザ名/リポジトリ名.git
 ```
 
-[![Image from Gyazo](https://i.gyazo.com/225622a053f31b3551d8b56ba2e3dd5d.png)](https://gyazo.com/225622a053f31b3551d8b56ba2e3dd5d)
+<kbd><img src="https://i.gyazo.com/225622a053f31b3551d8b56ba2e3dd5d.png" width="500px"></kbd>
 
-6. ブランチ名を main に変更し、リモートリポジトリにコードを push する。
+**6. ブランチ名を main に変更し、リモートリポジトリにコードを push する。**
 
 ```
 git branch -M main
 git push -u origin main
 ```
 
-[![Image from Gyazo](https://i.gyazo.com/371f7aa4144adfff03b407805ca83b91.png)](https://gyazo.com/371f7aa4144adfff03b407805ca83b91)
+<kbd><img src="https://i.gyazo.com/371f7aa4144adfff03b407805ca83b91.png" width="500px"></kbd>
 
-7. ローカル DB を設定する。
+**7. ローカル DB を設定する。**
 
 ```
 docker-compose run --rm web rails db:reset
 ```
 
-8. イメージを構築し、コンテナを起動する。
+**8. イメージを構築し、コンテナを起動する。**
 
 ```
 docker-compose build
 docker-compose up
 ```
 
-[![Image from Gyazo](https://i.gyazo.com/2054526e03bfac32d1c8d4c68bafd638.png)](https://gyazo.com/2054526e03bfac32d1c8d4c68bafd638)
+<kbd><img src="https://i.gyazo.com/2054526e03bfac32d1c8d4c68bafd638.png" width="500px"></kbd>
 
-9. http://localhost:3000/ <span>にアクセスする。</span>
+**9. http://localhost:3000/ <span>にアクセスする。</span>**
 
 =>完成！！！  
-[![Image from Gyazo](https://i.gyazo.com/230cc9564b5da741ba4a275e42160a75.png)](https://gyazo.com/230cc9564b5da741ba4a275e42160a75)
+<kbd><img src="https://i.gyazo.com/230cc9564b5da741ba4a275e42160a75.png" width="500px"></kbd>
 
 # 各種知識
 
